@@ -4,6 +4,8 @@ import localeCN from 'iview/dist/locale/zh-CN'
 export default {
   en: Object.assign({
     message: {
+      garbage: 'Garbage',
+      tms: 'TMS',
       content: 'Content',
       hello: 'Hello World!',
       artcle: 'Artcle',
@@ -36,6 +38,8 @@ export default {
   }, localeEN),
   zh: Object.assign({
     message: {
+      garbage: '垃圾',
+      tms: '系统',
       content: '内容',
       hello: '你好，世界！',
       artcle: '文章',

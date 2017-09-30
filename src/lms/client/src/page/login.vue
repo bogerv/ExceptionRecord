@@ -3,7 +3,7 @@
     <canvas id="canvas" class="canvas"></canvas>
     <div class="login-box">
       <div class="login-logo">
-      <a href="../../index2.html"><b>Admin</b>LTE</a>
+      <a href="/"><b>{{$i18n.t('message.garbage')}}</b>{{$i18n.t('message.tms')}}</a>
     </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
@@ -22,10 +22,12 @@
       <FormItem>
           <Checkbox v-model="formLogin.rememberme">{{ $t('message.rememberme') }}</Checkbox>
           <Button type="primary" @click="handleSubmit('formLogin')">{{ $t('message.login') }}</Button>
+          <!-- <a href="javascript:void(0);" @click="handleSubmit('formLogin')" style="float:right;">{{ $t('message.login') }}</a> -->
       </FormItem>
       <FormItem>
-        <a href="#">{{ $t('message.forgotPassword') }}</a><br>
+        <p style="text-align:center;">- OR -</p>
         <a href="register.html" class="text-center">{{ $t('message.register') }}</a>
+        <a href="#" style="float:right;">{{ $t('message.forgotPassword') }}</a>
       </FormItem>
     </Form>
   </div>
