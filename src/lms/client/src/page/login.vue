@@ -44,7 +44,6 @@
     data () {
       const validateUsername = (rule, value, callback) => {
         if (value === '') {
-          console.log('sfdsfsd')
           callback(new Error(this.$i18n.t('message.inputUserName')))
         } else {
           callback()
@@ -89,8 +88,12 @@
         this.$refs.selection.selectAll(status)
       },
       handleSubmit (name) {
+        var $this = this
         this.$refs[name].validate((valid) => {
           if (valid) {
+            debugger
+            this.$api.get('topics', $this.formLogin, r => {
+            })
             this.$Message.success(this.$i18n.t('message.validateSuccess'))
           } else {
             this.$Message.error(this.$i18n.t('message.validateFail'))

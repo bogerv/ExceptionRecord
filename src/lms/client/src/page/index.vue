@@ -4,7 +4,7 @@
     <Table border ref="selection" :loading="loading" :columns="columns3" :data="list"></Table>
     <div style="margin: 10px;overflow: hidden">
         <div style="float: right;">
-            <Page :total="total" :current="page" @on-change="changePage" @on-page-size-change="changePageSize" show-sizer placement="top"></Page>
+            <Page :total="total" :current="page" @on-change="changePage" @on-page-size-change="changePageSize" show-sizer show-total placement="top"></Page>
         </div>
     </div>
   </div>
@@ -89,9 +89,6 @@ export default {
         this.spanLeft = 5
         this.spanRight = 19
       }
-    },
-    changeText (name) {
-      this.menuText = name
     },
     changePage (page) {
       this.loading = true

@@ -9,19 +9,28 @@
               </div>
             </Col>
             <Col :span="spanRight" style="height:100%;">
-              <Button type="text" @click="toggleClick" style="padding: 10px 15px;" >
+              <Button type="text" @click="toggleClick" style="margin-top: 5px;">
                 <Icon type="navicon" size="30" color="white"></Icon>
               </Button>
-              <Dropdown style="margin-left: 20px;float: right;padding: 10px 15px;" @on-click="changeText">
+              <Dropdown style="float: right;margin-top: 2px;margin-right: 5px;" @on-click="profileOpt">
+                  <Button type="primary" style="margin-top: 2px;">
+                    <Avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" />
+                  </Button>
+                  <DropdownMenu slot="list" style="text-align: center;min-width: 0px">
+                    <DropdownItem name="profile">{{ $t("message.profile") }}</DropdownItem>
+                    <DropdownItem divided name="logout">{{ $t("message.logout") }}</DropdownItem>
+                    <!-- <Button type="text" size="small" @click.native="logout">{{ $t("message.logout") }}</Button> -->
+                  </DropdownMenu>
+              </Dropdown>
+              <Dropdown style="float: right;padding: 10px 10px 10px 0;" @on-click="changeText">
                   <Button type="primary">
                     {{menuText}}
                     <Icon type="arrow-down-b"></Icon>
                   </Button>
-                  <DropdownMenu slot="list">
+                  <DropdownMenu slot="list" style="text-align: center;min-width: 60px">
                     <DropdownItem name="zh">中文</DropdownItem>
                     <!-- <DropdownItem disabled>豆汁儿</DropdownItem> -->
                     <DropdownItem name="en">English</DropdownItem>
-                    <!-- <DropdownItem divided>北京烤鸭</DropdownItem> -->
                   </DropdownMenu>
               </Dropdown>
             </Col>
@@ -122,6 +131,15 @@ export default {
     }
   },
   methods: {
+    profileOpt (name) {
+      if (name === 'logout') {
+        this.logout()
+      } else {
+      }
+    },
+    logout () {
+      this.$router.push('/login')
+    },
     handleSelectAll (status) {
       this.$refs.selection.selectAll(status)
     },
@@ -147,6 +165,7 @@ export default {
       }
       this.$i18n.locale = name
       localStorage.setItem('language', name)
+      // location.reload()
     },
     menuSelect (name) {
       this.$router.push(name)

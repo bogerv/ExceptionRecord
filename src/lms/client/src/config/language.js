@@ -33,7 +33,10 @@ export default {
       validateFail: 'Validate failure!',
       ageNotNull: 'Age can\'t be null',
       inputInt: 'Input interger',
-      must18age: 'Age must lager than 18'
+      must18age: 'Age must lager than 18',
+      // header
+      profile: 'Profile',
+      logout: 'Logout'
     }
   }, localeEN),
   zh: Object.assign({
@@ -67,7 +70,10 @@ export default {
       validateFail: '表单验证失败!',
       ageNotNull: '年龄不能为空',
       inputInt: '请输入数字值',
-      must18age: '必须年满18岁'
+      must18age: '必须年满18岁',
+      // header
+      profile: '简介',
+      logout: '退出'
     }
   }, localeCN)
 }
