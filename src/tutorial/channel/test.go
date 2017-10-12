@@ -1,3 +1,10 @@
+/*
+sync.WaitGroup的使用也非常简单，先是使用Add 方法设设置计算器为2，每一个goroutine的函数执行完之后，就调用Done方法减1。Wait方法的意思是如果计数器大于0，就会阻塞，所以main 函数会一直等待2个goroutine完成后，再结束。
+*/
+/*
+对于逻辑处理器的个数，不是越多越好，要根据电脑的实际物理核数，如果不是多核的，设置再多的逻辑处理器个数也没用，如果需要设置的话，一般我们采用如下代码设置。
+runtime.GOMAXPROCS(runtime.NumCPU())
+*/
 package main
 
 import (
@@ -15,6 +22,7 @@ func main() {
 	numberChan3 := make(chan int64, 3)
 
 	go func() {
+		defer waitGroup.Done()
 		for n := range numberChan1 {
 			if n%2 == 0 {
 				numberChan2 <- n
@@ -23,7 +31,7 @@ func main() {
 			}
 		}
 		close(numberChan2)
-		waitGroup.Done()
+		// waitGroup.Done()
 	}()
 
 	go func() {

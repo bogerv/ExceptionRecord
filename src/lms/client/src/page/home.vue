@@ -12,9 +12,10 @@
               <Button type="text" @click="toggleClick" style="margin-top: 5px;">
                 <Icon type="navicon" size="30" color="white"></Icon>
               </Button>
-              <Dropdown style="float: right;margin-top: 2px;margin-right: 5px;" @on-click="profileOpt">
+              <Dropdown style="float: right;margin-top: 2px;margin-right: 5px;" @on-click="profileOpt" trigger="click">
                   <Button type="primary" style="margin-top: 2px;">
                     <Avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" />
+                    <Icon type="arrow-down-b"></Icon>
                   </Button>
                   <DropdownMenu slot="list" style="text-align: center;min-width: 0px">
                     <DropdownItem name="profile">{{ $t("message.profile") }}</DropdownItem>
@@ -168,7 +169,7 @@ export default {
       // location.reload()
     },
     menuSelect (name) {
-      this.$router.push(name)
+      this.$router.push({ path: '/' + name })
     }
   }
 }

@@ -10,4 +10,5 @@ func main(){
 	fmt.Println(*ptr)
 	*ptr=200
 	fmt.Println(*ptr)
+	fmt.Println(num)
 }

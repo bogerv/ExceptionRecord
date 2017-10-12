@@ -10,7 +10,7 @@
   </div>
 </template>
 
-<<script>
+<script>
 import LHeader from '../components/header.vue'
 import LFooter from '../components/footer.vue'
 import WangEditor from '../components/wangeditor.vue'
