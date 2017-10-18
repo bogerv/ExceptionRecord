@@ -28,7 +28,7 @@
 .layout-menu-left{
   padding-top: 55px;
   height: 100%;
-  position: fixed;
+  position: fixed !important;
   background: #464c5b;
   z-index: 10;
 }

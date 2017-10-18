@@ -91,7 +91,6 @@
         var $this = this
         this.$refs[name].validate((valid) => {
           if (valid) {
-            debugger
             this.$api.get('topics', $this.formLogin, r => {
             })
             this.$Message.success(this.$i18n.t('message.validateSuccess'))
